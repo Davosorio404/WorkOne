@@ -25,7 +25,103 @@
             </div>
         </nav>
     </header>
+    <main>
+        <div class="container text-center">
 
+            <div class="row justify-content-center">
+
+                <div class="col-4"><img class="img-fluid my-3" src="img/Bodytech.svg.png" alt="smart fit logo"></div>
+
+            </div>
+
+            <div class="row justify-content-center">
+                <div class="col-8">
+
+                    <hr class="text-warning">
+                    
+                    <form action="second.php" method="POST" class="mt-5">
+                        
+                        <div class="row g-3 d-flex justify-content-center align-items-center mb-3">
+                            <div class="col-auto">
+                                <input type="text"class="form-control" name="height" placeholder="Height">
+                            </div>
+                        </div>
+                        <div class="row g-3 d-flex justify-content-center align-items-center mb-3">
+                            <div class="col-auto">
+                                <input type="text"class="form-control" name="weight" placeholder="Weight">
+                            </div>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-outline-warning w-100 mt-5" name="operate">Calculate</button>
+                        
+                    </form>
+                    
+                </div>
+            </div>
+
+            <?php 
+            
+            if(isset($_POST["operate"])){
+
+                $height = $_POST["height"];
+                $weight = $_POST["weight"];
+                  
+                if($height && $weight != ""){
+                    $classification = "";
+                    $imc = $weight / ($height**2);
+
+                    if($imc<18.5){
+                        $classification = "Insufficient weight";
+                    }
+                    elseif($imc>=18.5 && $imc<25){
+                        $classification = "Normal weight";
+                    }
+                    elseif($imc>=25 && $imc<27){
+                        $classification = "Overweight grade I";
+                    }
+                    elseif($imc>=27 && $imc<30){
+                        $classification = "Overweight grade II (pre-obesity)";
+                    }
+                    elseif($imc>=30 && $imc<35){
+                        $classification = "Type obesity I";
+                    }
+                    elseif($imc>=35 && $imc<40){
+                        $classification = "Type obesity II";
+                    }
+                    elseif($imc>=40 && $imc<50){
+                        $classification = "Type obesity III (morbid)";
+                    }
+                    else{
+                        $classification = "Type obesity IV (extreme)";
+                    }
+                }
+            }
+
+            ?>
+            
+            <div class="row justify-content-center text-center mt-5">
+                <div class="col-5">
+                    
+                    <h4 class="text-warning mb-3">Your body mass index is</h4>
+
+                    <h5><?php  if(isset($_POST["operate"])) {
+
+                        if($height && $weight != ""){
+                            echo($classification);
+                        }
+                        else{
+                            echo("Please enter a valid value");
+                        } 
+                        
+                    }?></h5>
+                    
+                    <hr class="text-warning mt-4">
+
+                </div>
+            </div>
+
+        </div>
+    </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 </html>
