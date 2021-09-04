@@ -107,6 +107,17 @@
                     <h5><?php  if(isset($_POST["operate"])) {
 
                         if($height && $weight != ""){
+                            echo(number_format($imc,2));
+                        }
+                        else{
+                            echo("Please enter a valid value");
+                        } 
+                        
+                    }?></h5>
+
+                    <h5><?php  if(isset($_POST["operate"])) {
+
+                        if($height && $weight != ""){
                             echo($classification);
                         }
                         else{

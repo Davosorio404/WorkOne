@@ -48,6 +48,11 @@
                                 <input type="text"class="form-control" name="pairs" placeholder="Number of pairs">
                             </div>
                         </div>
+                        <div class="row g-3 d-flex justify-content-center align-items-center mb-3">
+                            <div class="col-auto">
+                                <input type="text"class="form-control" name="pricePair" placeholder="Price per pair">
+                            </div>
+                        </div>
                         
                         <button type="submit" class="btn btn-outline-primary w-100 mt-4" name="operate">Calculate</button>
                         
@@ -61,7 +66,7 @@
             if(isset($_POST["operate"])){
 
                 $pairs = $_POST["pairs"];
-                $pricePerPair = 80000;
+                $pricePerPair = $_POST["pricePair"];
                 $subTotal = $pairs * $pricePerPair;
                 $discount = 0;
 

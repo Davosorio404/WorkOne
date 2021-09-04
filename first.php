@@ -79,27 +79,27 @@
             
             <div class="row d-flex justify-content-center text-center mt-5">
 
-                <div class="col-2">
+                <div class="col-lg-3 col-md-5 col-sm-7">
                     <h3 class="text-primary">Add</h3>
                     <p><?php if(isset($_POST["operate"]) && $numberOne && $numberTwo != "" ) echo($add) ?></p>
                     <hr class="text-primary">
                 </div>
                 
-                <div class="col-2">
+                <div class="col-lg-3 col-md-5 col-sm-7">
                     <h3 class="text-primary">Subtraction</h3>
                     <p><?php if(isset($_POST["operate"])&& $numberOne && $numberTwo != "" ) echo($subtraction) ?></p>
                     <hr class="text-primary">
                 </div>
                 
-                <div class="col-2">
+                <div class="col-lg-3 col-md-5 col-sm-7">
                     <h3 class="text-primary">Multiplication</h3>
                     <p><?php if(isset($_POST["operate"])&& $numberOne && $numberTwo != "" ) echo($multiplication) ?></p>
                     <hr class="text-primary">
                 </div>
                 
-                <div class="col-2">
+                <div class="col-lg-3 col-md-5 col-sm-7">
                     <h3 class="text-primary">Division</h3>
-                    <p><?php if(isset($_POST["operate"])&& $numberOne && $numberTwo != "" ) echo($division) ?></p>
+                    <p><?php if(isset($_POST["operate"])&& $numberOne && $numberTwo != "" ) echo(number_format($division,2)) ?></p>
                     <hr class="text-primary">
                 </div>
 
