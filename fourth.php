@@ -31,7 +31,7 @@
 
             <div class="row justify-content-center">
 
-                <div class="col-5"><img class="img-fluid my-3" src="img/postobon-logo.png" alt="spring step logo"></div>
+                <div class="col-3"><img class="img-fluid my-3" src="img/postobon-logo.png" alt="Postobon logo"></div>
 
             </div>
 
@@ -49,7 +49,7 @@
                             </div>
                         </div>
                         
-                        <button type="submit" class="btn btn-primary w-100 mt-4" name="operate">Calculate</button>
+                        <button type="submit" class="btn btn-danger w-100 mt-4" name="operate">Calculate</button>
                         
                     </form>
                     

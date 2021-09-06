@@ -25,6 +25,68 @@
             </div>
         </nav>
     </header>
+    <main>
+        <div class="container text-center">
+            <div class="row d-flex justify-content-center">
+                <div class="col-8">
+
+                    <h1 class="mb-5 text-danger">Sixth Point</h1>
+                    <hr>
+
+                    <form action="sixth.php" method="POST" class="mt-5">
+
+                        <div class="row g-3 d-flex justify-content-center align-items-center mb-3">
+                            <div class="col-auto">
+                                <label class="col-form-label">Quantity</label>
+                            </div>
+                            <div class="col-auto">
+                                <input type="text"class="form-control" name="quantity">
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-outline-danger w-100 mt-5" name="operate">Calculate</button>
+                    </form>
+
+                </div>
+            </div>
+
+            <?php 
+            
+                if(isset($_POST["operate"])){
+
+                    $quantity = $_POST["quantity"];
+
+                    $pairs = [];
+                    
+                    for($i = 2; $i<=($quantity*2); $i+=2){
+
+                        $pairs[] = $i;
+
+                    }
+                    
+                }
+            
+            ?>
+
+            <div class="row justify-content-center text-center mt-5">
+                <div class="col-lg-8 col-md-8 col-sm-12">
+                    <table class="table mb-5">
+                        <thead class="text-danger">
+                            <tr>
+                                <th scope="col">Numbers</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-white border-danger">
+                            <?php if(isset($_POST["operate"]))foreach($pairs as $pair):?>
+                                <tr>
+                                    <td><?php echo($pair) ?></td>
+                                </tr>
+                            <?php endforeach?>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </main>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
