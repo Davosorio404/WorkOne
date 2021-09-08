@@ -66,7 +66,8 @@
                             $subtraction = $numberOne - $numberTwo;
                             $multiplication = $numberOne * $numberTwo;
                             $division = $numberOne / $numberTwo;
-                        }else{
+                        }
+                        else{
                             echo("Please enter any numbers");
                         }
                     }

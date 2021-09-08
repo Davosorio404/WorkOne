@@ -26,6 +26,58 @@
         </nav>
     </header>
 
+    <main>
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                
+                <h1 class="mb-5 text-success">Calculate age</h1>
+                <hr class="text-success">
+
+                 <form action="eighth.php" method="POST" class="mt-5">
+                    <div class="row g-3 d-flex justify-content-center align-items-center mb-3">
+                        <div class="col-auto">
+                            <input type="text"class="form-control" name="actualYear" placeholder="Actual year">
+                        </div>
+                    </div>
+                    <div class="row g-3 d-flex justify-content-center align-items-center mb-3">
+                        <div class="col-auto">
+                            <input type="text"class="form-control" name="bornYear" placeholder="Born year">
+                        </div>
+                    </div>
+                    <button type="submit" class="btn btn-outline-success w-100 mt-5" name="operate">Calculate</button>
+                </form>
+
+            </div>
+
+            <?php 
+            
+                if(isset($_POST["operate"])){
+
+                    $actualYear = $_POST["actualYear"];
+                    $bornYear = $_POST["bornYear"];
+                    
+                    function calculateAge($actualYear, $bornYear){
+                        $age = $actualYear - $bornYear;
+                        return($age);
+                    }
+                
+                    $age = calculateAge($actualYear,$bornYear);
+                
+                }
+
+            ?>
+
+            <div class="row d-flex justify-content-center text-center mt-5">
+
+                <div class="col-6">
+                    <h3 class="text-success">Age</h3>
+                    <p><?php if(isset($_POST["operate"])) echo($age) ?></p>
+                    <hr class="text-success">
+                </div>
+
+            </div>
+        </div>
+    </main>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
 </body>
 </html>
