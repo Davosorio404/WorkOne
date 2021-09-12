@@ -34,7 +34,6 @@
                     <hr>
 
                     <form action="sixth.php" method="POST" class="mt-5">
-
                         <div class="row g-3 d-flex justify-content-center align-items-center mb-3">
                             <div class="col-auto">
                                 <label class="col-form-label">Quantity</label>
