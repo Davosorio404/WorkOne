@@ -60,20 +60,6 @@
         return($biotype);
     }
 
-   /*  foreach($players as $player){
-        $bornYear = $player["bornYear"];
-        $height = $player["height"];
-
-        $age = calculateAge(2021,$bornYear);
-        $biotype = calculateBiotype($player["height"]);
-        
-        $player["age"] = $age;
-        $player["biotype"] = $biotype;
-
-    }
-    print_r($players); */
-    echo("<br>");
-    
     ?>
 
     <main>
@@ -95,7 +81,7 @@
                         <tbody class="text-white">
                             <?php foreach($players as $player):?>
                                 <?php 
-                                   /*  
+
                                     $bornYear = $player["bornYear"];
                                     $height = $player["height"];
                             
@@ -104,7 +90,6 @@
                                     
                                     $player["age"] = $age;
                                     $player["biotype"] = $biotype;
-                                     */
                                 ?>
                                 <tr>
                                     <td><?php echo($player["name"]) ?></td>
